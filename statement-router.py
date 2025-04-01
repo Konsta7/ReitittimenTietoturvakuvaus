@@ -8,6 +8,7 @@ any_host = system.any("Services")
 
 router = system.device("Zyxel Router")
 router.ip("192.168.1.1")
+router.hw("98:0D:67:AD:6B:7A")
 
 router_http = router / HTTP(auth=True, port=80)
 router_https = router / TLS(port=443)
@@ -17,7 +18,6 @@ router_telnet = router / TCP(port=23)
 router_upnp = router / TCP(port=5431)
 
 
-router.hw("98:0D:67:AD:6B:7A")
 
 router >> any_host / TLS / UDP(port=443) / HTTP 
 any_host >> router / TLS / UDP(port=443) / HTTP 
