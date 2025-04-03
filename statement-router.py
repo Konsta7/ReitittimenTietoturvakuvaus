@@ -14,8 +14,6 @@ router_http = router / HTTP(auth=True, port=80)
 router_https = router / TLS(port=443)
 router_ssh = router / SSH(port=22)
 router_dns = router / DNS
-router_telnet = router / TCP(port=23)
-router_upnp = router / TCP(port=5431)
 
 
 
